@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.Name + ', ' + x.Country }}
+        </li>
+    </ul>
+    <a href="http://www.runoob.com/w3cnote/php-ajax-cross-border.html">fail原因</a>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
+                .success(function(response) {$scope.names = response.records;}).error(function(response){alert('fail')});
+    });
+</script>
+</body>
+</html>

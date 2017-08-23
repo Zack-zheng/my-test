@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+</head>
+<body>
+<a href="http://www.runoob.com/angularjs/angularjs-directives.html">AngularJS 指令 </a>
+一、
+<div ng-app="" ng-init="firstName='John';quantity=1;price=5;names1=['Jani','Hege','Kai'];names2=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+    1.AngularJS 指令:
+    <p>在输入框中尝试输入：</p>
+    <p>姓名：<input type="text" ng-model="firstName"></p>
+    <p>你输入的为： {{ firstName }}</p>
+
+
+    2.数据绑定:
+    <h2>价格计算器</h2>
+
+    数量： <input type="number" ng-model="quantity">
+    价格： <input type="number" ng-model="price">
+
+    <p><b>总价：</b> {{ quantity * price }}</p>
+
+    3.重复 HTML 元素
+    (1)
+    <p>使用 ng-repeat 来循环数组</p>
+    <ul>
+        <li ng-repeat="x in names1">
+            {{ x }}
+        </li>
+    </ul>
+    (2)
+    <p>循环对象：</p>
+    <ul>
+        <li ng-repeat="x in names2">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+    <br>ng-app 指令
+    <br>ng-app 指令定义了 AngularJS 应用程序的 根元素。
+    <br>ng-app 指令在网页加载完毕时会自动引导（自动初始化）应用程序。
+    <br>稍后您将学习到 ng-app 如何通过一个值（比如 ng-app="myModule"）连接到代码模块。
+    <br>ng-init 指令
+    <br>ng-init 指令为 AngularJS 应用程序定义了 初始值。
+    <br>通常情况下，不使用 ng-init。您将使用一个控制器或模块来代替它。
+    <br>稍后您将学习更多有关控制器和模块的知识。
+    <br>ng-model 指令
+    <br>ng-model 指令 绑定 HTML 元素 到应用程序数据。
+    <br>ng-model 指令也可以：
+    <br>为应用程序数据提供类型验证（number、email、required）。
+    <br>为应用程序数据提供状态（invalid、dirty、touched、error）。
+    <br>为 HTML 元素提供 CSS 类。
+    <br>绑定 HTML 元素到 HTML 表单。
+    <br>ng-repeat 指令
+    <br>ng-repeat 指令对于集合中（数组中）的每个项会 克隆一次 HTML 元素。
+
+</div>
+
+
+</body>
+<hr>
+二、
+<br>创建自定义的指令
+<br>除了 AngularJS 内置的指令外，我们还可以创建自定义指令。
+<br>你可以使用 .directive 函数来添加自定义的指令。
+<br>要调用自定义指令，HTMl 元素上需要添加自定义指令名。
+<br>使用驼峰法来命名一个指令， runoobDirective, 但在使用它时需要以 - 分割, runoob-directive:
+<br>AngularJS 实例
+<body ng-app="myApp">
+
+<runoob-directive></runoob-directive>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            template : "<h1>自定义指令!</h1>"
+        };
+    });
+</script>
+
+</body>
+</html>

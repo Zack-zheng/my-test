@@ -1,0 +1,13 @@
+2015-08-18 22:47:32 [ main ] begin parse xml
+  2015-08-18 22:47:32 [ main ] begin read file
+  2015-08-18 22:47:32 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-18 22:47:32 [ main ] parse end!
+  2015-08-18 22:58:43 [ main ] begin parse xml
+  2015-08-18 22:58:43 [ main ] begin read file
+  2015-08-18 22:58:43 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-18 22:58:43 [ main ] parse end!
+  2015-08-19 08:59:38 [ main ] begin parse xml
+  2015-08-19 08:59:39 [ main ] begin read file
+  2015-08-19 08:59:39 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-19 08:59:39 [ main ] parse end!
+  

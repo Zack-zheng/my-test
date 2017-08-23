@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    1.ng-click 指令
+    <br>
+    <button ng-click="count = count + 1">点我！</button>
+    <p>{{ count }}</p>
+    <hr>
+
+    2.隐藏 HTML 元素
+
+    <br>
+    <button ng-click="toggle()">隐藏/显示</button>
+    <p ng-hide="myVar">
+        名: <input type=text ng-model="firstName"><br>
+        姓: <input type=text ng-model="lastName"><br><br>
+        姓名: {{firstName + " " + lastName}}
+    <hr>
+    </p>
+
+    3.<button ng-click="toggle()">隐藏/显示</button>
+
+    <p ng-show="myVar">
+        名: <input type=text ng-model="person.firstName"><br>
+        姓: <input type=text ng-model="person.lastName"><br><br>
+        姓名: {{person.firstName + " " + person.lastName}}
+    </p>
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function ($scope, $http) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+        $scope.myVar = false;
+        $scope.toggle = function () {
+            $scope.myVar = !$scope.myVar;
+        }
+
+        $scope.person = {
+            firstName: "John",
+            lastName: "Doe"
+        };
+    });
+</script>
+</body>
+</html>

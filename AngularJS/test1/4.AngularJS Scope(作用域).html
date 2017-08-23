@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+1.
+    <h1>{{carname}}</h1>
+    <h1>{{carname1}}</h1>
+2.
+    <input ng-model="name">
+    <h1>我的名字是 {{name}}</h1>
+3.
+    <ul>
+        <li ng-repeat="x in names">{{x}}</li>
+    </ul>
+
+    4.
+    <h1>{{lastname}} 家族成员:</h1>
+    <ul>
+        <li ng-repeat="x in names">{{x}} {{lastname}}</li>
+    </ul>
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $rootScope) {
+        $scope.carname = "Volvo";
+        $scope.carname1 = "Volvo11";
+        $scope.name = "John Dow";
+        $scope.names = ["Emil", "Tobias", "Linus"];
+        $rootScope.lastname = "Refsnes";
+
+    });
+</script>
+
+</body>
+</html>

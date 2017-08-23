@@ -1,0 +1,18 @@
+2015-08-18 22:47:32 [ main ] begin parse xml
+  2015-08-18 22:47:32 [ main ] begin read file
+  2015-08-18 22:47:32 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-18 22:47:32 [ main ] parse end!
+  2015-08-18 22:58:43 [ main ] begin parse xml
+  2015-08-18 22:58:43 [ main ] begin read file
+  2015-08-18 22:58:43 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-18 22:58:43 [ main ] parse end!
+  2015-08-19 08:59:38 [ main ] begin parse xml
+  2015-08-19 08:59:39 [ main ] begin read file
+  2015-08-19 08:59:39 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-19 08:59:39 [ main ] parse end!
+  2015-08-19 09:03:21 [ main ] 打印待解析xml:<?xml version="1.0" encoding="UTF-8"?><PACKET TYPE="REQUEST"><HEAD><TRAN_CODE>20</TRAN_CODE><USER>SYSTEMPAY</USER><PASSWORD>systempay</PASSWORD></HEAD><BODY><BASE><BANK_CODE>1</BANK_CODE><INSURE_ID>AC000000</INSURE_ID><MIDNO>0</MIDNO><TIDNO>0</TIDNO><BK_ACCT_DATE>20140102</BK_ACCT_DATE><BK_ACCT_TIME>122602</BK_ACCT_TIME><BK_SERIAL>1</BK_SERIAL><BK_TRAN_CHNL>TER01</BK_TRAN_CHNL><PAY_APP_NO>011410015876</PAY_APP_NO><AMOUNT>000003003272</AMOUNT><PAYCOUNT>1</PAYCOUNT><CURRENCYTYPE>CNY</CURRENCYTYPE></BASE><DETAILS><PAYINFO><BATCH_NO>1</BATCH_NO><CASH_NO>0</CASH_NO><CARD_NO>0</CARD_NO><SUB_AMOUNT>000003003272</SUB_AMOUNT></PAYINFO></DETAILS></BODY></PACKET>
+  2015-08-19 09:03:21 [ main ] begin parse xml
+  2015-08-19 09:03:21 [ main ] begin read file
+  2015-08-19 09:03:21 [ main ] 打印出BANK_CODE.getTextTrim():1
+  2015-08-19 09:03:21 [ main ] parse end!
+  

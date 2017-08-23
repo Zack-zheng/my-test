@@ -1,0 +1,162 @@
+2015-09-26 22:06:41 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@169e11: startup date [Sat Sep 26 22:06:41 CST 2015]; root of context hierarchy
+  2015-09-26 22:06:41 [ main ] Loading XML bean definitions from class path resource [applicationContext.xml]
+  2015-09-26 22:21:16 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1855af5: startup date [Sat Sep 26 22:21:16 CST 2015]; root of context hierarchy
+  2015-09-26 22:21:16 [ main ] Loading XML bean definitions from class path resource [applicationContext.xml]
+  2015-09-26 22:24:41 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:24:41 CST 2015]; root of context hierarchy
+  2015-09-26 22:24:41 [ main ] Loading XML bean definitions from class path resource [applicationContext.xml]
+  2015-09-26 22:25:04 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:25:04 CST 2015]; root of context hierarchy
+  2015-09-26 22:25:04 [ main ] Loading XML bean definitions from class path resource [applicationContext.xml]
+  2015-09-26 22:25:51 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:25:51 CST 2015]; root of context hierarchy
+  2015-09-26 22:25:51 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 22:27:10 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:27:10 CST 2015]; root of context hierarchy
+  2015-09-26 22:27:10 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 22:27:55 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:27:55 CST 2015]; root of context hierarchy
+  2015-09-26 22:27:55 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 22:27:55 [ main ] Exception encountered during context initialization - cancelling refresh attempt
+  org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.apache.commons.dbcp.BasicDataSource] for bean with name 'dataSource' defined in class path resource [com/frames/springJDBC/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:974)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:834)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.frames.springJDBC.Test.main(Test.java:13)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1396)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1343)
+	... 10 more
+2015-09-26 22:39:38 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 22:39:38 CST 2015]; root of context hierarchy
+  2015-09-26 22:39:38 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:21:43 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@b0f13d: startup date [Sat Sep 26 23:21:43 CST 2015]; root of context hierarchy
+  2015-09-26 23:21:43 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:21:44 [ main ] Exception encountered during context initialization - cancelling refresh attempt
+  org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [org.apache.commons.dbcp.BasicDataSource] for bean with name 'dataSource' defined in class path resource [com/frames/springJDBC/applicationContext.xml]; nested exception is java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:974)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:834)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.frames.springJDBC.Test.main(Test.java:13)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.dbcp.BasicDataSource
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1396)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1343)
+	... 10 more
+2015-09-26 23:22:56 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:22:56 CST 2015]; root of context hierarchy
+  2015-09-26 23:22:56 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:22:56 [ main ] Exception encountered during context initialization - cancelling refresh attempt
+  org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/frames/springJDBC/applicationContext.xml]: Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1518)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:834)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.frames.springJDBC.Test.main(Test.java:13)
+Caused by: org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:121)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1514)
+	... 13 more
+2015-09-26 23:32:01 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:32:01 CST 2015]; root of context hierarchy
+  2015-09-26 23:32:01 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:32:01 [ main ] Exception encountered during context initialization - cancelling refresh attempt
+  org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/frames/springJDBC/applicationContext.xml]: Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1518)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:834)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.frames.springJDBC.Test.main(Test.java:13)
+Caused by: org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:121)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1514)
+	... 13 more
+2015-09-26 23:33:07 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:33:07 CST 2015]; root of context hierarchy
+  2015-09-26 23:33:07 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:33:07 [ main ] Exception encountered during context initialization - cancelling refresh attempt
+  org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/frames/springJDBC/applicationContext.xml]: Error setting property values; nested exception is org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1518)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:305)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:301)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:834)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.frames.springJDBC.Test.main(Test.java:13)
+Caused by: org.springframework.beans.PropertyBatchUpdateException; nested PropertyAccessExceptions (1) are:
+PropertyAccessException 1: org.springframework.beans.MethodInvocationException: Property 'driverClassName' threw exception; nested exception is java.lang.IllegalStateException: Could not load JDBC driver class [com.mysql.jdbc.Driver]
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:121)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:75)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1514)
+	... 13 more
+2015-09-26 23:35:12 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:35:12 CST 2015]; root of context hierarchy
+  2015-09-26 23:35:12 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:35:12 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-26 23:35:13 [ main ] Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+  2015-09-26 23:35:13 [ main ] SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+  2015-09-26 23:35:13 [ main ] !!!!!!!!!!!!!!!!!!!Exception:org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [select * FROM t_test]; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'myweb.t_test' doesn't exist
+  2015-09-26 23:38:47 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:38:47 CST 2015]; root of context hierarchy
+  2015-09-26 23:38:47 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:38:47 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-26 23:40:23 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:40:23 CST 2015]; root of context hierarchy
+  2015-09-26 23:40:23 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:40:23 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-26 23:42:04 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:42:04 CST 2015]; root of context hierarchy
+  2015-09-26 23:42:04 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:42:05 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-26 23:42:58 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sat Sep 26 23:42:58 CST 2015]; root of context hierarchy
+  2015-09-26 23:42:58 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-26 23:42:58 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  

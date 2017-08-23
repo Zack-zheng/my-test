@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--W3C Schema 由 XMLSpy v2006 U 创建 (http://www.altova.com)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!-- xmlns:xs="http://www.w3.org/2001/XMLSchema"
+显示 schema 中用到的元素和数据类型来自命名空间 "http://www.w3.org/2001/XMLSchema"。同时它还规定了来自命名空间 "http://www.w3.org/2001/XMLSchema" 的元素和数据类型应该使用前缀 xs： -->
+<!-- elementFormDefault="qualified"指出任何 XML 实例文档所使用的且在此 schema 中声明过的元素必须被命名空间限定。 -->
+	<xs:element name="AMOUNT">
+	</xs:element>
+	<xs:element name="BANK_CODE">
+	</xs:element>
+	<xs:element name="BASE">
+		<xs:complexType>
+			<xs:all>
+			
+				<xs:element ref="BANK_CODE"/>
+				<xs:element ref="INSURE_ID"/>
+				<xs:element ref="MIDNO"/>
+				<xs:element ref="TIDNO"/>
+				<xs:element ref="BK_ACCT_DATE"/>
+				<xs:element ref="BK_ACCT_TIME"/>
+				<xs:element ref="BK_SERIAL"/>
+				<xs:element ref="BK_TRAN_CHNL"/>
+				<xs:element ref="PAY_APP_NO"/>
+				<xs:element ref="AMOUNT"/>
+				<xs:element ref="PAYCOUNT"/>
+				<xs:element ref="CHECK_OPCODE" minOccurs="0"/>
+				<xs:element ref="CHECK_OPNAME" minOccurs="0"/>
+				<xs:element ref="CURRENCYTYPE" minOccurs="0"/><!-- 此行有改动：增加 2009年8月7日16:56:11 No1  -->
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BATCH_NO">
+	</xs:element>
+	<xs:element name="BK_ACCT_DATE">
+	</xs:element>
+	<xs:element name="BK_ACCT_TIME">
+	</xs:element>
+	<xs:element name="BK_SERIAL">
+	</xs:element>
+	<xs:element name="BK_TRAN_CHNL">
+	</xs:element>
+	<xs:element name="BODY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BASE"/>
+				<xs:element ref="DETAILS"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CARD_NO">
+	</xs:element>
+	<xs:element name="CASH_NO">
+	</xs:element>
+	<xs:element name="CHECK_OPCODE">
+	</xs:element>
+	<xs:element name="CHECK_OPNAME">
+	</xs:element>
+	
+	<xs:element name="STAGENUM"></xs:element>
+	<xs:element name="FEERATE"></xs:element>
+	<xs:element name="FEEAMOUNT"></xs:element>
+	
+	<!-- 此处有改动：增加：2009年8月7日16:58:06 No2 start -->
+<xs:element name="CURRENCYTYPE">
+	</xs:element>
+<!-- 2009年8月7日16:58:19   No2 end -->
+	
+	
+	
+	
+	<xs:element name="DETAILS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PAYINFO" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HEAD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TRAN_CODE"/>
+				<xs:element ref="USER"/>
+				<xs:element ref="PASSWORD"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="INSURE_ID">
+	</xs:element>
+	<xs:element name="MIDNO">
+	</xs:element>
+	<xs:element name="PACKET">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HEAD"/>
+				<xs:element ref="BODY"/>
+			</xs:sequence>
+			<xs:attribute name="TYPE" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="REQUEST"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PASSWORD">
+	</xs:element>
+	<xs:element name="PAYCOUNT">
+	</xs:element>
+	<xs:element name="PAYINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BATCH_NO"/>
+				<xs:element ref="CASH_NO"/>
+				<xs:element ref="CARD_NO"/>
+				<xs:element ref="SUB_AMOUNT"/>
+				<xs:element ref="STAGENUM" minOccurs="0"/>
+				<xs:element ref="FEERATE" minOccurs="0"/>
+				<xs:element ref="FEEAMOUNT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PAY_APP_NO">
+	</xs:element>
+	<xs:element name="SUB_AMOUNT">
+	</xs:element>
+	<xs:element name="TIDNO">
+	</xs:element>
+	<xs:element name="TRAN_CODE">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="USER">
+	</xs:element>
+</xs:schema>

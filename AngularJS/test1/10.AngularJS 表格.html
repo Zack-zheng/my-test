@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        /*table tr:nth-child(odd)	{*/
+            /*background-color: #f1f1f1;*/
+        /*}*/
+        /*table tr:nth-child(even) {*/
+            /*background-color: #ffffff;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    1.<table>
+        <tr ng-repeat="x in names | orderBy : 'Country'" >
+            <td>{{ $index + 1 }}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Name }}</td>
+            <td ng-if="$even">{{ x.Name }}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Country  | uppercase}}</td>
+            <td ng-if="$even">{{ x.Country  | uppercase}}</td>
+        </tr>
+    </table>
+
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    var s = { "records":[ {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"}, {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"}, {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"}, {"Name":"Around the Horn","City":"London","Country":"UK"}, {"Name":"B's Beverages","City":"London","Country":"UK"}, {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"}, {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"}, {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"}, {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"}, {"Name":"Bon app'","City":"Marseille","Country":"France"}, {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"}, {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"}, {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"}, {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"}, {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"} ] };
+    app.controller('customersCtrl', function ($scope, $http) {
+//        $http.get("/try/angularjs/data/Customers_JSON.php")
+//                .success(function (response) {
+//                    $scope.names = response.records;
+//                });
+
+        $scope.names  = s.records;
+    });
+</script>
+</body>
+</html>

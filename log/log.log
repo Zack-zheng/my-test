@@ -1,0 +1,14 @@
+2015-09-27 00:31:11 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sun Sep 27 00:31:11 CST 2015]; root of context hierarchy
+  2015-09-27 00:31:11 [ main ] Loading XML bean definitions from class path resource [applicationContext.xml]
+  2015-09-27 00:31:55 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sun Sep 27 00:31:55 CST 2015]; root of context hierarchy
+  2015-09-27 00:31:56 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-27 00:31:56 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-27 00:39:25 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sun Sep 27 00:39:25 CST 2015]; root of context hierarchy
+  2015-09-27 00:39:25 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/applicationContext.xml]
+  2015-09-27 00:39:42 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sun Sep 27 00:39:42 CST 2015]; root of context hierarchy
+  2015-09-27 00:39:42 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/example1/applicationContext.xml]
+  2015-09-27 00:39:43 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  2015-09-27 00:39:50 [ main ] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ae000d: startup date [Sun Sep 27 00:39:50 CST 2015]; root of context hierarchy
+  2015-09-27 00:39:50 [ main ] Loading XML bean definitions from class path resource [com/frames/springJDBC/example1/applicationContext.xml]
+  2015-09-27 00:39:50 [ main ] Loaded JDBC driver: com.mysql.jdbc.Driver
+  

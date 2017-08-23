@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    1.ng-disabled 指令
+<br>
+    <p>
+        <button ng-disabled="mySwitch">点我!</button>
+    </p>
+    <p>
+        <input type="checkbox" ng-model="mySwitch">按钮
+    </p>
+    <p>
+        {{ mySwitch }}
+    </p>
+    ng-disabled 指令绑定应用程序数据 "mySwitch" 到 HTML 的 disabled 属性。
+    ng-model 指令绑定 "mySwitch" 到 HTML input checkbox 元素的内容（value）。
+    如果 mySwitch 为true, 按钮将不可用:
+    <hr>
+    2.ng-show 指令
+<br>
+    <p ng-show="true">我是可见的。</p>
+    <p ng-show="false">我是不可见的。</p>
+    <p ng-show="hour > 12">大于12点我是可见的。</p>
+
+    <hr>
+    3.ng-hide 指令
+    <p ng-hide="true">我是不可见的。</p>
+
+    <p ng-hide="false">我是可见的。</p>
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function ($scope, $http) {
+        $scope.hour = 13;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../sources/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    1.
+    名字: <input ng-model="name">
+    <h1>你输入了: {{name}}</h1>
+    <hr>
+    2.
+    Email:
+    <form name="myForm2">
+        <input type="email" name="myAddress" ng-model="text2">
+        <span ng-show="myForm2.myAddress.$error.email">不是一个合法的邮箱地址</span>
+    </form>
+    <hr>
+    3.
+    <form name="myForm3" ng-init="myText = 'test@runoob.com'">
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <p>编辑邮箱地址，查看状态的改变。</p>
+        <h1>状态</h1>
+        <p>Valid: {{myForm3.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
+        <p>Dirty: {{myForm3.myAddress.$dirty}} (如果值改变则为 true)。</p>
+        <p>Touched: {{myForm3.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+
+    </form><hr>
+    4.
+    <style>
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+    </style>
+    <form  name="myForm4">
+        输入你的名字:
+        <input name="myAddress1" ng-model="text4" required>
+    </form>
+
+</div>
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.name = "John Doe";
+    });
+</script>
+
+</body>
+</html>
