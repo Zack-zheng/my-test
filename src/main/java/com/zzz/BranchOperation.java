@@ -6,6 +6,6 @@ package com.zzz;
 public class BranchOperation {
     public static void main(String[] args) {
         //学习分支操作
-        System.out.println("feature commit again");
+        System.out.println("test2 commit");
     }
 }
