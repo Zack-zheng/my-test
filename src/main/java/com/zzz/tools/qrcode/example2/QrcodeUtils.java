@@ -12,8 +12,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.SystemUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -29,7 +29,7 @@ import java.util.UUID;
  */
 public class QrcodeUtils {
 
-    private static final transient Logger LOGGER = LoggerFactory.getLogger(QrcodeUtils.class);
+//    private static final transient Logger LOGGER = LoggerFactory.getLogger(QrcodeUtils.class);
 
     private static transient String DEFAULT_FORMAT = "jpg";
     private static transient int DEFAULT_WIDTH = 200;
@@ -50,11 +50,14 @@ public class QrcodeUtils {
                     DEFAULT_WIDTH = tmpWidth;
                     DEFAULT_HEIGHT = tmpHeight;
                 } else {
-                    LOGGER.warn("qrcode size must be lager than zero.");
+                    System.out.println("qrcode size must be lager than zero.");
+//                    LOGGER.warn("qrcode size must be lager than zero.");
                 }
             }
         } catch (Throwable e) {
-            LOGGER.warn("read default qrcode size config error: ", e);
+            e.printStackTrace();
+            System.out.println("read default qrcode size config error: ");
+//            LOGGER.warn("read default qrcode size config error: ", e);
         }
     }
 
