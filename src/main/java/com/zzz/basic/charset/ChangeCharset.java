@@ -1,3 +1,5 @@
+package com.zzz.basic.charset;
+
 import java.io.UnsupportedEncodingException;
 
 import org.junit.Test;
