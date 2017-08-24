@@ -5,6 +5,6 @@ package com;
  */
 public class TestBranch {
     public static void main(String[] args) {
-        System.out.println("test1 commit2 ");
+        System.out.println("test1 commit3 ");
     }
 }
