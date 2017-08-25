@@ -1,7 +1,5 @@
 package com.zzz.basic.thread;
 
-import com.frames.springJDBC.example1.Test;
-
 /**
  * Created by jack_ on 2016/4/4.
  */
