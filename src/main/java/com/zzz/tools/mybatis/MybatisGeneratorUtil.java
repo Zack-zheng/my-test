@@ -1,6 +1,6 @@
 package com.zzz.tools.mybatis;
 
-import com.zzz.basic.testencrypt.AESUtil;
+import com.zzz.basic.encrypt.AESUtil;
 import com.zzz.tools.jdbc.JdbcUtil;
 import com.zzz.tools.string.StringUtil;
 import org.apache.commons.lang.ObjectUtils;

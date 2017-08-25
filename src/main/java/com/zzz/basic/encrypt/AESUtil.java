@@ -1,4 +1,4 @@
-package com.zzz.basic.testencrypt;
+package com.zzz.basic.encrypt;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

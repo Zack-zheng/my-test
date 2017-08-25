@@ -1,4 +1,4 @@
-package com.zzz.basic.base64;
+package com.zzz.basic.encrypt.base64;
 
 
 import java.math.BigInteger;  

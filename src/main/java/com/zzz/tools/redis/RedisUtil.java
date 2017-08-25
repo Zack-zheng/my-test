@@ -1,6 +1,6 @@
 package com.zzz.tools.redis;
 
-import com.zzz.basic.testencrypt.AESUtil;
+import com.zzz.basic.encrypt.AESUtil;
 import com.zzz.tools.configuration.PropertiesFileUtil;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;

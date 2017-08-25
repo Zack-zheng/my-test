@@ -1,4 +1,4 @@
-package com.zzz.basic.testencrypt;
+package com.zzz.basic.encrypt.base64;
 /**
  * Created by jack_ on 2016/3/7.
  */
