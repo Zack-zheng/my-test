@@ -1,4 +1,4 @@
-package com.zzz.tools.propertityconfiguration;
+package com.zzz.tools.configuration;
 
 import java.util.Enumeration;
 import java.util.Locale;
