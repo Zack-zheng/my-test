@@ -566,4 +566,75 @@ public class FileUtils {
         File file = new File(path);
         return (file.exists() && file.isFile() ? file.length() : -1);
     }
+
+    /**
+     * 拆分文件
+     *
+     * @param targetFilePath 目标文件路径
+     * @param subFileNum     分割文件的数量
+     */
+    public static void splitFile(String targetFilePath, int subFileNum) {
+        File file = new File(targetFilePath);
+        if (file.isDirectory()) {
+            System.out.println("不能对文件夹进行操作：" + targetFilePath);
+            return;
+        }
+
+        long lon = file.length() / subFileNum + 1L;//使文件字节数+1，保证取到所有的字节
+        try {
+            RandomAccessFile raf1 = new RandomAccessFile(file, "r");
+
+            byte[] bytes = new byte[1024];//值设置越小，则各个文件的字节数越接近平均值，但效率会降低，这里折中，取1024
+            int len = -1;
+            for (int i = 0; i < subFileNum; i++) {
+                String outputFilePath = file.getParent();
+
+                String name = outputFilePath + File.separator + file.getName() + "_subFile" + File.separator + file.getName() + "_" + i + ".txt";
+                FileUtils.makeDirs(name);
+                File file2 = new File(name);
+                RandomAccessFile raf2 = new RandomAccessFile(file2, "rw");
+
+                while ((len = raf1.read(bytes)) != -1) {//读到文件末尾时，len返回-1，结束循环
+                    raf2.write(bytes, 0, len);
+                    if (raf2.length() > lon)//当生成的新文件字节数大于lon时，结束循环
+                        break;
+                }
+                raf2.close();
+            }
+            raf1.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    /**
+     * 合并文件
+     *
+     * @param targetFolder
+     */
+    public static void mergeFile(String targetFolder) {
+        File file = new File(targetFolder);
+        File outputFile = new File(targetFolder + ".txt");
+        try {
+            RandomAccessFile target = new RandomAccessFile(outputFile, "rw");
+            for (File subFile : file.listFiles()) {
+                RandomAccessFile src = new RandomAccessFile(subFile, "r");
+                byte[] bytes = new byte[1024];//每次读取字节数
+                int len = -1;
+                while ((len = src.read(bytes)) != -1) {
+                    target.write(bytes, 0, len);//循环赋值
+                }
+                src.close();
+            }
+            target.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
