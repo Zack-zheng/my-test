@@ -1,11 +1,15 @@
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.zzz.tools.file.FileUtils;
+import lombok.Data;
+import okhttp3.*;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
+import java.util.*;
 
 public class SampleTest {
 
@@ -170,12 +174,33 @@ public class SampleTest {
 
     @Test
     public void test_10() {
+        String context = FileUtils.readFile("C:\\Users\\zheng\\Desktop\\目录保存.txt","UTF-8").toString();
+        int tempCount = 0;
+        for (String b : context.split("\r\n")){
 
+            if (b.indexOf(" ")>0){
+                String num = b.substring(0,b.indexOf(" "));
+                tempCount = num.split("\\.").length;
+                b = tDo(b,tempCount);
+                System.out.println(b);
+            }else {
+                b = tDo(b,tempCount+1);
+                System.out.println(b);
+            }
+
+        }
+    }
+
+    private String tDo(String a, int doCount){
+        for (int i = 1 ;i<doCount ;i++){
+            a = "\t"+a;
+        }
+        return a;
     }
 
     @Test
     public void test_11() {
-
+        System.out.println(new Date(1681999145816L));
     }
 
     @Test
@@ -183,14 +208,99 @@ public class SampleTest {
 
     }
 
-    @Test
-    public void test_13() {
+    private String getJson() {
+        String json = FileUtils.readFile("C:\\Users\\zheng\\Desktop\\Untitled-1.ini","utf-8").toString();
+        DTO dto = new DTO();
+        dto.setTime(52*60+34);
+        dto.setType("2");
+        dto.setUserNo("2022022309501471622");
+        dto.setUserExtNo("2022022309501471622");
+        dto.setV(new Date().getTime());
 
+        Map<String, List<Integer>> answer = new HashMap<>();
+        JSONArray jsonArray = JSONArray.parseArray(json);
+        jsonArray.forEach( a ->{
+            JSONObject jsonObject = (JSONObject)a;
+            JSONArray data = (JSONArray) jsonObject.get("data");
+            data.forEach(b->{
+                JSONObject object = (JSONObject)b;
+                JSONArray answerList = (JSONArray) object.get("answer");
+                List<Integer> list = new ArrayList<>();
+                answerList.forEach(h ->{list.add(Integer.parseInt(h.toString()));});
+                answer.put(object.get("id").toString(),list);
+
+            });
+        });
+
+        dto.setAnswer(answer);
+
+        return JSONObject.toJSONString(dto);
     }
 
     @Test
-    public void test_14() {
+    public void test_13() throws IOException {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("application/json;charset=UTF-8");
+        RequestBody body = RequestBody.create(mediaType, getJson());
+        Request request = new Request.Builder()
+                .url("http://api.edu.sjysz.com/api/exam/auth/test/audit")
+                .method("POST", body)
+                .addHeader("Accept", "application/json, text/plain, */*")
+                .addHeader("Accept-Language", "zh-CN,zh;q=0.9")
+                .addHeader("Connection", "keep-alive")
+                .addHeader("Content-Type", "application/json;charset=UTF-8")
+                .addHeader("Origin", "http://app.edu.sjysz.com")
+                .addHeader("Referer", "http://app.edu.sjysz.com/")
+                .addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36")
+                .addHeader("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTm8iOiIyMDIyMDIyMzA5NTAxNDcxNjIyIiwiaXNzIjoiUk9OQ09PIiwiZXhwIjoxNjg0NTkwODgwfQ.Ad_hH8h4OCbc-or5lZ9M62E-ZPR1NfhpNd4bGHfiLbs")
+                .build();
+        Response response = client.newCall(request).execute();
+        System.out.println(response.toString());
+    }
 
+    @Data
+    static class DTO{
+        private int time;
+        private String type;
+        private Map<String, List<Integer>> answer;
+        private long v;
+        private String userNo;
+        private String userExtNo;
+    }
+    @Test
+    public void test_14() {
+        for (int i =0 ;i<2;i++){
+
+            System.out.println(getContent());
+        }
+    }
+
+    private static String getContent() {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("application/json;charset=UTF-8");
+        RequestBody body = RequestBody.create(mediaType, "{\"testIds\":[],\"type\":\"2\",\"categoryId\":\"1253246255115538434\",\"page\":1,\"v\":1682006693828,\"userNo\":\"2022022309501471622\",\"userExtNo\":\"2022022309501471622\"}");
+        Request request = new Request.Builder()
+                .url("http://api.edu.sjysz.com/api/exam/auth/test/randomTest")
+                .method("POST", body)
+                .addHeader("Accept", "application/json, text/plain, */*")
+                .addHeader("Accept-Language", "zh-CN,zh;q=0.9")
+                .addHeader("Connection", "keep-alive")
+                .addHeader("Content-Type", "application/json;charset=UTF-8")
+                .addHeader("Origin", "http://app.edu.sjysz.com")
+                .addHeader("Referer", "http://app.edu.sjysz.com/")
+                .addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36")
+                .addHeader("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTm8iOiIyMDIyMDIyMzA5NTAxNDcxNjIyIiwiaXNzIjoiUk9OQ09PIiwiZXhwIjoxNjg0NTkwODgwfQ.Ad_hH8h4OCbc-or5lZ9M62E-ZPR1NfhpNd4bGHfiLbs")
+                .build();
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            return response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Test

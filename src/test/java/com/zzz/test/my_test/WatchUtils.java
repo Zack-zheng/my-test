@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class WatchUtils {
-    final static String code = "RTpc6L+F6Zu35LiL6L29XEF1dG9DQURfMjAxOF94NjRfTGl0ZV9MaWJyYXJ5XFNldHVwQ29u";
+    final static String code = "RTpcQXV0b0NBRF8yMDE4X3g2NF9MaXRlX0xpYnJhcnlcNzVhNjg4YWFlNGRlNDE2ZWFjZGRiYzY3NmNiYWQ5Zjk=";
     private final static List<String> FILE_SUF = Arrays.asList("Lk1QNA==", "LkdJRg==", "Lk1PVg==", "LnJtdmI=", "LmF2aQ==", "Lm0zdTg=");
 
     public static void main(String[] args) {
