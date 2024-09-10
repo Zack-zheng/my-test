@@ -1,6 +1,5 @@
 package com.zzz.tools.mybatis;
 
-import com.zzz.basic.encrypt.AESUtil;
 import com.zzz.tools.jdbc.JdbcUtil;
 import com.zzz.tools.string.StringUtil;
 import org.apache.commons.lang.ObjectUtils;
@@ -71,7 +70,7 @@ public class MybatisGeneratorUtil {
 			Map<String, Object> table;
 
 			// 查询定制前缀项目的所有表
-			JdbcUtil jdbcUtil = new JdbcUtil(jdbc_driver, jdbc_url, jdbc_username, AESUtil.AESDecode(jdbc_password));
+			JdbcUtil jdbcUtil = new JdbcUtil(jdbc_driver, jdbc_url, jdbc_username, jdbc_password);
 			List<Map> result = jdbcUtil.selectByParams(sql, null);
 			for (Map map : result) {
 				System.out.println(map.get("TABLE_NAME"));
@@ -89,7 +88,7 @@ public class MybatisGeneratorUtil {
 			context.put("generator_javaClientGenerator_targetPackage", package_name + ".dao.mapper");
 			context.put("targetProject", targetProject);
 			context.put("targetProject_sqlMap", targetProject_sqlMap);
-			context.put("generator_jdbc_password", AESUtil.AESDecode(jdbc_password));
+			context.put("generator_jdbc_password", jdbc_password);
 			context.put("last_insert_id_tables", last_insert_id_tables);
 			VelocityUtil.generate(generatorConfig_vm, generatorConfig_xml, context);
 			// 删除旧代码
